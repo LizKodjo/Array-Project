@@ -26,20 +26,33 @@
                     <div class="container pictures">
                         <div>
                             <h1>Beautiful Pictures</h1>
-                            <p>Using the arrows below, please scroll through the pictures. If there
-                                are any you like, add them to your email.
+                            <p>Using the buttons below, please scroll through the pictures. If there
+                                are any you like, add them to your email by clicking the 'Select' button.
                             </p>
                         </div>
 
                         <div class="img">
                             <h2>Images to choose from</h2>
-                            <img class="imgChoice" src="https://picsum.photos/300?random=1">
+                            <span>
+                                <img class="imgChoice" src="https://picsum.photos/300?random=1" alt="Random pictures">
+                                 <button type="button">Next</button>
+                                <button type="submit">Select</button>
+                            </span>
                         </div>
                     </div>
 
                     <div class="container email-input">
                         <label for="email">Please enter your email:</label>
-                        <input type="text" id="email", name="email">
+                        <input id="input-email" type="text" id="email" name="email">
+                        <button id="sub-btn" type="submit">Submit</button>
+                        <div>
+                            <h3>Selected pictures</h3>
+                            <p>This is the email you entered: </p>
+                            <div class="container selectedPics">
+                                <div class="recEmail"></div>                                
+                            </div>
+
+                        </div>
                     </div>
                 </main>
                 <footer></footer>
@@ -48,7 +61,9 @@
     </div>
     <script src="js/jquery-3.7.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <!-- <script src="js/bootstrap.js"></script> -->
+    <script src="js/pic-functions.js"></script>
+    <script src="js/validation.js"></script>
 </body>
 
 </html>

@@ -4,13 +4,25 @@
 
 
 body {
-    font: $font-family;
+    font-family: $font-family;
     background-image: $background-gradient;
     // background-repeat: no-repeat;
 }
 
-.imgChoice {
+.imgChoice,
+.selectedPics {
     box-shadow: 10px 10px 5px wheat;
     width: 100%;
     height: auto;
+}
+
+.selectedPics {
+    border: 1px inset black;
+    background-color: beige;
+    // width: 100%;
+    // height:auto;
+}
+
+.recEmail {
+    font-size: 20px;
 }

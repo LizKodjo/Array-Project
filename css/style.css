@@ -3,14 +3,24 @@
 }
 
 body {
-  font: "Mooli", sans-serif;
+  font-family: "Mooli", sans-serif;
   background-image: linear-gradient(to right, wheat, antiquewhite);
 }
 
-.imgChoice {
+.imgChoice,
+.selectedPics {
   box-shadow: 10px 10px 5px wheat;
   width: 100%;
   height: auto;
+}
+
+.selectedPics {
+  border: 1px inset black;
+  background-color: beige;
+}
+
+.recEmail {
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
