@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font: $font-family;
+    background-image: $background-gradient;
+    // background-repeat: no-repeat;
+}
+
+.imgChoice {
+    box-shadow: 10px 10px 5px wheat;
+    width: 100%;
+    height: auto;
+}

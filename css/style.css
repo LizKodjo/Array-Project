@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: "Mooli", sans-serif;
+  background-image: linear-gradient(to right, wheat, antiquewhite);
+}
+
+.imgChoice {
+  box-shadow: 10px 10px 5px wheat;
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=style.css.map */
