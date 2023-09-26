@@ -34,9 +34,15 @@
                         <div class="img">
                             <h2>Images to choose from</h2>
                             <span>
-                                <img class="imgChoice" src="https://picsum.photos/300?random=1" alt="Random pictures">
-                                <button id="next-btn" type="button">Next</button>
-                                <button id="select-pic" type="submit">Select</button>
+                                <div>
+                                    <img class="imgChoice" src="https://picsum.photos/300.jpg?random=1"
+                                        alt="Random pictures">
+                                </div>
+                                <form id="selectingBtns" action="">
+                                    <button id="next-btn" type="button">Next</button>
+                                    <button id="select-btn" type="button">Select</button>
+                                </form>
+
                             </span>
                         </div>
                     </div>
@@ -46,9 +52,9 @@
                         <form id="email-form" action="">
                             <label for="email">Please enter your email:</label>
                             <input type="text" id="email" name="email">
-                            <button id="sub-btn" type="submit">Submit</button><br>
+                            <button id="sub-btn" type="submit" >Submit</button><br>
                             <small class="errorMsg"></small>
-                            
+
                         </form>
 
 

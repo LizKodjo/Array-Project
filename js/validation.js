@@ -1,31 +1,36 @@
-const form = document.getElementById('email-form');
-const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-const email = document.getElementById('email');
-const errorMsg = document.querySelector('.errorMsg');
-const emailValue = email.value.trim();
+const useremail = document.querySelector('#email');
+const form = document.querySelector('#email-form');
+const warnMsg =  document.querySelector('.errorMsg');
 
-// if (form) {
-//     form.addEventListener('submit', e => {
-//         e.preventDefault();
-//     });
-// }
+// /^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/
 
-// function isValidEmail() {
-//     return emailRegex.test(emailValue);
-// }
+// /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
-// if (!emailValue) {
-//     console.log('Please enter an email');
-// }
+form.addEventListener("submit", (e) => {
+    const errors = [];    
+    
 
-// if (!isValidEmail(emailValue)) {
-//     console.log('please enter a valid email');
-// }
-
-// Validating email
-
-function emailValidation() {
-    if (!email) {
-        console.log('Please enter an email address');
+    if(useremail.value.trim() === '') {
+        errors.push('Please enter your email');
     }
+
+    if (errors.length > 0) {
+        e.preventDefault();
+        warnMsg.toggleAttribute('hidden');
+        warnMsg.innerHTML = errors.join(', ');
+    }
+})
+
+function validateEmail() {
+
+    var emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if(!useremail.value.match(emailRegex)) {
+        warnMsg.toggleAttribute('hidden');
+        warnMsg.innerHTML = 'Please enter a valid email';
+        return false;
+    }
+    warnMsg.innerHTML = '';
+    return true;
 }
+  
+
