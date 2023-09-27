@@ -1,0 +1,15 @@
+@media (max-width: 568px) {
+    .imgChoice, .selectedPics {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .imgChoice, .selectedPics {
+        width: 75%;
+    }
+
+    #emailLabel {
+        display:flex;
+    }
+}

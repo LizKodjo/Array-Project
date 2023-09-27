@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array Project</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script src="https://kit.fontawesome.com/f8bda8a3df.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet">
@@ -35,11 +36,11 @@
                             <h2>Images to choose from</h2>
                             <span>
                                 <div>
-                                    <img class="imgChoice" src="https://picsum.photos/300.jpg?random=1"
+                                    <img id="current-pic" class="imgChoice" src="https://picsum.photos/300.jpg?random=1"
                                         alt="Random pictures">
                                 </div>
                                 <form id="selectingBtns" action="">
-                                    <button id="next-btn" type="button">Next</button>
+                                    <button id="next-btn" type="button" onclick="changeImage()">Next</button>
                                     <button id="select-btn" type="button">Select</button>
                                 </form>
 
@@ -49,16 +50,19 @@
 
                     <div class="container">
 
-                        <form id="email-form" action="">
-                            <label for="email">Please enter your email:</label>
+                        <form id="email-form" action="/">
+                            <div class="form-control">
+                            <label id="emailLabel" for="email">Please enter your email:</label>
                             <input type="text" id="email" name="email">
-                            <button id="sub-btn" type="submit" >Submit</button><br>
+                            <button id="sub-btn" type="submit">Submit</button><br>
                             <small class="errorMsg"></small>
+                            <i class="fa-solid fa-check"></i>
+                            </div>
 
                         </form>
 
 
-                        <div>
+                        <div class="selectSection">
                             <h3>Selected pictures</h3>
                             <p>This is the email you entered: </p>
                             <div class="container selectedPics">

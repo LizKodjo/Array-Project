@@ -12,9 +12,13 @@ body {
 .imgChoice,
 .selectedPics {
     box-shadow: 10px 10px 5px wheat;
-    width: 100%;
+    // width: 100%;
     height: auto;
     object-fit: fill;
+}
+
+.selectSection {
+    padding: 20px 0;
 }
 
 .selectedPics {
@@ -24,7 +28,41 @@ body {
     // height:auto;
 }
 
+#selectingBtns {
+    margin: 20px 0;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
 .recEmail {
     font-size: 20px;
 }
 
+.form-control {
+    background-color: transparent;
+    position: relative;
+    border: none;
+    margin: 20px 0;
+    
+}
+.form-control i {
+    visibility: hidden;
+}
+
+.form-control.success input {
+    border-color: #2ecc71;
+}
+
+.form-control.error input {
+    border-color: #e74c3c;
+}
+.form-control.success i.fa-check {
+    color:#2ecc71;
+    visibility: visible;
+}
+
+.form-control.error small {
+    color:#e74c3c;
+    visibility: visible;
+}
