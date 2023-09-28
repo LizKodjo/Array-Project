@@ -11,7 +11,7 @@ function changeImage() {
 const useremail = document.querySelector('#email');
 const form = document.querySelector('#email-form');
 const warnMsg =  document.querySelector('.errorMsg');
-let confirmEmail = document.querySelector('.recEmail');
+let confirmEmail = document.querySelector('#savedEmail');
 
 
   
@@ -31,10 +31,12 @@ function checkInputs() {
     } else if(!isEmail(useremailValue)) {
         setErrorFor(useremail, 'Email address is not valid');
     } else {
-        // setSuccessFor(useremail);
+        setSuccessFor(useremail);
+        $('.errorMsg').hide();
 
         // Show the validated email
-        confirmEmail.textContent = useremail.value;        
+        confirmEmail.textContent = useremail.value;
+              
     }
 }
 

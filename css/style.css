@@ -1,6 +1,14 @@
+.container {
+  width: 100%;
+}
 @media (max-width: 568px) {
   .imgChoice, .selectedPics {
     width: 100%;
+  }
+  .getImg {
+    width: 150px;
+    height: 150px;
+    padding: 10px;
   }
 }
 @media (min-width: 768px) {
@@ -9,6 +17,25 @@
   }
   #emailLabel {
     display: flex;
+  }
+  .getImg {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+  }
+}
+@media (min-width: 996px) {
+  .getImg {
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+  }
+}
+@media (min-width: 1200) {
+  .getImg {
+    width: 300px;
+    height: 300px;
+    padding: 10px;
   }
 }
 * {
@@ -74,6 +101,14 @@ body {
 .form-control.error small {
   color: #e74c3c;
   visibility: visible;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

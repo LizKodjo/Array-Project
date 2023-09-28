@@ -33,9 +33,92 @@ selectedPic = [];
 //     });
 // });
 
-$(function() {
-    $('#select-btn').click(function() {
-        let picAddress = fetch($('#current-pic'));
-        console.log(picAddress);
-    });
-});
+// $(function () {
+//     $('#select-btn').click(function () {
+//         //     let picAddress = fetch($('#current-pic'));
+//         //    console.log(picAddress);
+
+//         fetch($('#current-pic').src)
+//             .then(res => res.blob())
+//             .then(blob => handler(blob))
+
+//     });
+// });
+
+
+
+// function handler(blob) {
+//     const url = URL.createObjectURL(blob);
+//     const img = new Image();
+//     img.src = url;
+//     img.onload = () => {
+//         document.querySelector('.recEmail').appendChild(img);
+//     }
+// }
+
+// const selected = document.querySelector('#select-btn');
+// const data = "Testing Blob";
+
+// // Create a blob 
+// const blob = new Blob([data], {type: 'text/plain'});
+
+// // Create URL for data in blob
+
+// const url = URL.createObjectURL(blob);
+// console.log(url);
+
+// // set as href
+// selected.href = url;
+
+// fetch($('#current-pic').src)
+// .then(res => res.blob())
+// .then(blob => handler(blob))
+
+// function handler(blob) {
+//     const url = URL.createObjectURL(blob);
+//     const img = new Image();
+//     img.src = url;
+//     img.onload =() => {
+//         document.body.appendChild(img);
+
+//         const canvas = document.createElement('canvas');
+//         const ctx = canvas.getContext('2d');
+
+//         canvas.height = img.naturalHeight;
+//         canvas.width = img.naturalWidth;
+
+//         ctx.drawImage(img, 0, 0);
+//         canvas.toBlob((newBlob) => {
+//             const newURL = URL.createObjectURL(newBlob);
+//             const newImg = new Image();
+//             newImg.src = newURL;
+//             newImg.onload = () => {
+//                 document.body.appendChild(newImg);
+//                 console.log(newURL);
+//             }
+//         })
+
+//     }
+// }
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     document.querySelector('#select-btn').addEventListener('click', createBlob);
+// });
+
+
+
+async function fetchImg() {
+    return await fetch('https://picsum.photos/300.jpg?random=1').then((res) => {
+        return res.blob()
+    }).then((blob) => {
+        let blobUrl = URL.createObjectURL(blob);
+        document.querySelector('.getImg').src = blobUrl;
+        console.log(blobUrl);
+    })
+}
+
+let blobUrl = null;
+function btnClick() {
+    blobUrl = fetchImg();
+}
+document.querySelector('#select-btn').addEventListener('click', btnClick)

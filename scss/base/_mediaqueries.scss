@@ -1,6 +1,26 @@
+
+.container {
+    @media(min-width:576px) {}
+
+    @media(min-width:768px) {}
+
+    @media(min-width:992px) {}
+
+    @media(min-width:1200px) {}
+
+    width:100%;
+}
+
+
 @media (max-width: 568px) {
     .imgChoice, .selectedPics {
         width: 100%;
+    }
+
+    .getImg {
+        width: 150px;
+        height: 150px;
+        padding: 10px;
     }
 }
 
@@ -11,5 +31,27 @@
 
     #emailLabel {
         display:flex;
+    }
+
+    .getImg {
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 996px) {
+    .getImg {
+        width: 250px;
+        height: 250px;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 1200) {
+    .getImg {
+        width: 300px;
+        height: 300px;
+        padding: 10px;
     }
 }
