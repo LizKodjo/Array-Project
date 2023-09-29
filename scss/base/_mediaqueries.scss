@@ -25,8 +25,13 @@
 }
 
 @media (min-width: 768px) {
+
+    .mainPictures {
+        width: 95%;
+    }
+    
     .imgChoice, .selectedPics {
-        width: 75%;
+        width: 100%;
     }
 
     #emailLabel {
@@ -41,9 +46,15 @@
 }
 
 @media (min-width: 996px) {
+
+    .mainPictures{
+        display:flex;
+        align-items: center;
+    }
+
     .getImg {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
         padding: 10px;
     }
 }

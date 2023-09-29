@@ -40,6 +40,10 @@ function checkInputs() {
     }
 }
 
+if (confirmEmail == useremail) {
+    console.log('Do not repeat email');
+}
+
 // Form control
 function setErrorFor(input, message) {
     const formControl = input.parentElement;

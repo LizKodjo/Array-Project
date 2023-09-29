@@ -24,51 +24,53 @@
             <div class="page-content">
                 <header></header>
                 <main>
-                    <div class="container pictures">
-                        <div>
-                            <h1>Beautiful Pictures</h1>
-                            <p>Using the buttons below, please scroll through the pictures. If there
-                                are any you like, add them to your email by clicking the 'Select' button.
-                            </p>
+                    <div class="container mainPictures">
+                        <div class="container pictures">
+                            <div>
+                                <h1>Beautiful Pictures</h1>
+                                <p>Using the buttons below, please scroll through the pictures. If there
+                                    are any you like, add them to your email by clicking the 'Select' button.
+                                </p>
+                            </div>
+
+                            <div class="container img">
+                                <h2>Images to choose from</h2>
+                                <img id="current-pic" class="imgChoice" src="https://picsum.photos/300.jpg?random=1"
+                                    alt="Random pictures">
+
+                                <form id="selectingBtns" action="">
+                                    <button id="next-btn" type="button" onclick="changeImage()">Next</button>
+                                    <button id="select-btn" type="button">Select</button>
+                                </form>
+
+
+                            </div>
                         </div>
 
-                        <div class="container img">
-                            <h2>Images to choose from</h2>
-                            <img id="current-pic" class="imgChoice" src="https://picsum.photos/300.jpg?random=1"
-                                alt="Random pictures">
+                        <div class="container">
 
-                            <form id="selectingBtns" action="">
-                                <button id="next-btn" type="button" onclick="changeImage()">Next</button>
-                                <button id="select-btn" type="button">Select</button>
+                            <form id="email-form" action="/">
+                                <div class="form-control">
+                                    <label id="emailLabel" for="email">Please enter your email:</label>
+                                    <input type="text" id="email" name="email">
+                                    <button id="sub-btn" type="submit">Submit</button><br>
+                                    <small class="errorMsg"></small>
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+
                             </form>
 
 
-                        </div>
-                    </div>
+                            <div class="selectSection">
+                                <h3>Selected pictures</h3>
+                                <p>This is the email you entered:
+                                <div id="savedEmail"></div>
+                                </p>
+                                <div class="container selectedPics">
+                                    <div class="recEmail"><img class="getImg"></div>
+                                </div>
 
-                    <div class="container">
-
-                        <form id="email-form" action="/">
-                            <div class="form-control">
-                                <label id="emailLabel" for="email">Please enter your email:</label>
-                                <input type="text" id="email" name="email">
-                                <button id="sub-btn" type="submit">Submit</button><br>
-                                <small class="errorMsg"></small>
-                                <i class="fa-solid fa-check"></i>
                             </div>
-
-                        </form>
-
-
-                        <div class="selectSection">
-                            <h3>Selected pictures</h3>
-                            <p>This is the email you entered:
-                            <div id="savedEmail"></div>
-                            </p>
-                            <div class="container selectedPics">
-                                <div class="recEmail"><img class="getImg"></div>
-                            </div>
-
                         </div>
                     </div>
                 </main>
