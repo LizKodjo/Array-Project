@@ -1,10 +1,19 @@
-// $(function() {
-//     $('sub-btn').click(function () {
-//         $('.recEmail').text($('#email').val());
-//     });
-// })
+let selected = document.getElementById('select-btn');
 
-selectedPic = [];
+// view next image in the displayed area
+
+function changeImage() {
+    var img = document.getElementById('current-pic').src;
+    src = img;
+    img.style.borderColor = 'blue';
+}
+
+// const image = document.getElementById('current-pic');
+// image.addEventListener('click', function() {
+//     image.style.borderColor = 'red';
+// });
+
+let arrayOfPics = [];
 
 // $(function () {
 //     $('#select-btn').click(function () {
@@ -107,18 +116,35 @@ selectedPic = [];
 
 
 
-async function fetchImg() {
-    return await fetch('https://picsum.photos/300.jpg?random=1').then((res) => {
-        return res.blob()
-    }).then((blob) => {
-        let blobUrl = URL.createObjectURL(blob);
-        document.querySelector('.getImg').src = blobUrl;
-        console.log(blobUrl);
-    })
+// async function fetchImg() {
+//     return await fetch('https://picsum.photos/300.jpg?random=1').then((res) => {
+//         return res.blob()
+//     }).then((blob) => {
+//         let blobUrl = URL.createObjectURL(blob);
+//         document.querySelector('.getImg').src = blobUrl;
+//         console.log(blobUrl);
+//     })
+// }
+
+// let blobUrl = null;
+// function btnClick() {
+//     blobUrl = fetchImg();
+// }
+// document.querySelector('#select-btn').addEventListener('click', btnClick)
+
+function addImage() {
+    const newImage = document.createElement('image');
+    newImage.src = 'new-image.jpg';
+    newImage.alt = 'New Image';
+
+    document.getElementById('getImg').appendChild(newImage);
 }
 
-let blobUrl = null;
-function btnClick() {
-    blobUrl = fetchImg();
-}
-document.querySelector('#select-btn').addEventListener('click', btnClick)
+$(function () {
+    $('#select-btn').click(function () {
+        fetch($('#current-pic').src);
+    })
+})
+
+
+

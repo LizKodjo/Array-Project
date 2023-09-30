@@ -1,7 +1,4 @@
-function changeImage() {
-    var img = document.getElementById('current-pic');
-    img.src = 'https://picsum.photos/300.jpg?random=1';
-}
+
 
 
 // $('#next-btn').click(function () {
@@ -64,3 +61,4 @@ function setSuccessFor(input) {
 function isEmail(useremail) {
     return /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(useremail);
 }
+
