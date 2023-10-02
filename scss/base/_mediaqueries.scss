@@ -17,11 +17,11 @@
         width: 100%;
     }
 
-    .getImg {
-        width: 150px;
-        height: 150px;
-        padding: 10px;
-    }
+    // .getImg {
+    //     width: 150px;
+    //     height: 150px;
+    //     padding: 10px;
+    // }
 }
 
 @media (min-width: 768px) {
@@ -38,11 +38,11 @@
         display:flex;
     }
 
-    .getImg {
-        width: 200px;
-        height: 200px;
-        padding: 10px;
-    }
+    // .getImg {
+    //     width: 200px;
+    //     height: 200px;
+    //     padding: 10px;
+    // }
 }
 
 @media (min-width: 996px) {
@@ -52,17 +52,24 @@
         align-items: center;
     }
 
-    .getImg {
-        width: 300px;
-        height: 300px;
-        padding: 10px;
-    }
+    // .getImg {
+    //     width: 300px;
+    //     height: 300px;
+    //     padding: 10px;
+    // }
 }
 
 @media (min-width: 1200) {
-    .getImg {
-        width: 300px;
-        height: 300px;
-        padding: 10px;
+
+    .mainPictures {
+        display:flex;
+        align-items: center;
+        flex-direction: column;
+        width: 70%;
     }
+    // .getImg {
+    //     width: 300px;
+    //     height: 300px;
+    //     padding: 10px;
+    // }
 }

@@ -1,12 +1,3 @@
-let selected = document.getElementById('select-btn');
-
-// view next image in the displayed area
-
-function changeImage() {
-    var img = document.getElementById('current-pic').src;
-    src = img;
-    img.style.borderColor = 'blue';
-}
 
 // const image = document.getElementById('current-pic');
 // image.addEventListener('click', function() {
@@ -132,19 +123,15 @@ let arrayOfPics = [];
 // }
 // document.querySelector('#select-btn').addEventListener('click', btnClick)
 
-function addImage() {
-    const newImage = document.createElement('image');
-    newImage.src = 'new-image.jpg';
-    newImage.alt = 'New Image';
+// function addImage() {
+//     const newImage = document.createElement('image');
+//     newImage.src = 'new-image.jpg';
+//     newImage.alt = 'New Image';
 
-    document.getElementById('getImg').appendChild(newImage);
-}
+//     document.getElementById('getImg').appendChild(newImage);
+// }
 
-$(function () {
-    $('#select-btn').click(function () {
-        fetch($('#current-pic').src);
-    })
-})
+
 
 
 

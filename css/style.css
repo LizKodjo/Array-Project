@@ -5,11 +5,6 @@
   .imgChoice, .selectedPics {
     width: 100%;
   }
-  .getImg {
-    width: 150px;
-    height: 150px;
-    padding: 10px;
-  }
 }
 @media (min-width: 768px) {
   .mainPictures {
@@ -21,28 +16,19 @@
   #emailLabel {
     display: flex;
   }
-  .getImg {
-    width: 200px;
-    height: 200px;
-    padding: 10px;
-  }
 }
 @media (min-width: 996px) {
   .mainPictures {
     display: flex;
     align-items: center;
   }
-  .getImg {
-    width: 300px;
-    height: 300px;
-    padding: 10px;
-  }
 }
 @media (min-width: 1200) {
-  .getImg {
-    width: 300px;
-    height: 300px;
-    padding: 10px;
+  .mainPictures {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
   }
 }
 * {
@@ -116,10 +102,6 @@ h1 {
 
 p {
   font-size: 20px;
-}
-
-#current-pic {
-  border: 2px solid red;
 }
 
 /*# sourceMappingURL=style.css.map */
