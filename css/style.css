@@ -5,8 +5,16 @@
   .imgChoice, .selectedPics {
     width: 100%;
   }
+  .footer-items .container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media (min-width: 768px) {
+  .footer-items .container {
+    display: flex;
+    justify-content: space-between;
+  }
   .mainPictures {
     width: 95%;
   }
@@ -21,6 +29,8 @@
   .mainPictures {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    width: 60%;
   }
 }
 @media (min-width: 1200) {
@@ -36,6 +46,7 @@
 }
 
 body {
+  margin: 0;
   font-family: "Mooli", sans-serif;
   background-image: linear-gradient(to right, wheat, antiquewhite);
 }
@@ -102,6 +113,16 @@ h1 {
 
 p {
   font-size: 20px;
+}
+
+.footer-items a {
+  color: black;
+}
+
+footer {
+  padding: 15px 0;
+  border-top: inset;
+  border-top-color: beige;
 }
 
 /*# sourceMappingURL=style.css.map */

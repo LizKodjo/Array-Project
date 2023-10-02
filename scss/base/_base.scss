@@ -4,6 +4,7 @@
 
 
 body {
+    margin: 0;
     font-family: $font-family;
     background-image: $background-gradient;
     // background-repeat: no-repeat;
@@ -75,3 +76,12 @@ p {
     font-size: 20px;
 }
 
+.footer-items a {
+    color: black;
+}
+
+footer {
+    padding: 15px 0;
+    border-top: inset;
+    border-top-color: beige;
+}
