@@ -1,44 +1,30 @@
 .container {
   width: 100%;
 }
-@media (max-width: 568px) {
-  .imgChoice, .selectedPics {
-    width: 100%;
+@media (min-width: 1px) and (max-width: 767px) {
+  .inner {
+    padding: 0 40px;
   }
-  .footer-items .container {
-    display: flex;
-    flex-direction: column;
+  .inner .images-controls {
+    margin: 20px 0;
   }
 }
 @media (min-width: 768px) {
-  .footer-items .container {
-    display: flex;
-    justify-content: space-between;
+  .inner {
+    padding: 0 80px;
   }
-  .mainPictures {
-    width: 95%;
-  }
-  .imgChoice, .selectedPics {
-    width: 100%;
-  }
-  #emailLabel {
-    display: flex;
+  .inner .images-controls {
+    margin: 40px 0;
   }
 }
-@media (min-width: 996px) {
-  .mainPictures {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 45%;
+@media (min-width: 992px) {
+  .inner {
+    padding: 0 100px;
   }
 }
-@media (min-width: 1200) {
-  .mainPictures {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 70%;
+@media (min-width: 1200px) {
+  .inner {
+    padding: 0 200px;
   }
 }
 * {
@@ -46,87 +32,45 @@
 }
 
 body {
+  font-size: 16px;
   margin: 0;
   font-family: "Mooli", sans-serif;
-  background-image: linear-gradient(to right, wheat, antiquewhite);
-}
-
-.mainPictures {
+  line-height: 1.5;
+  background-image: linear-gradient(to right, #999, #777);
   height: 100vh;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.imgChoice,
-.selectedPics {
-  box-shadow: 10px 10px 5px wheat;
-  height: auto;
-  object-fit: fill;
+.main {
+  padding: 0;
 }
 
-.selectSection {
-  padding: 20px 0;
+.inner .instructions {
+  font-size: 2rem;
+}
+.inner .images-box {
+  box-shadow: 10px 10px #685f5f;
+  width: 300px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.selectedPics {
-  border: 1px inset;
-  background-color: beige;
+footer .container {
+  padding: 0;
 }
-
-#selectingBtns {
-  margin: 20px 0;
-  align-items: center;
-  display: flex;
-  justify-content: space-around;
+footer .container .main-footer {
+  background-color: #000;
 }
-
-.recEmail {
-  font-size: 20px;
+footer .container .main-footer .footer-links {
+  padding: 0.9375em 0;
 }
-
-h1 {
-  font-size: 36px;
-}
-
-p {
-  font-size: 20px;
-}
-
-.footer-items a {
-  color: black;
-}
-
-footer {
-  padding: 15px 0;
-  border-top: inset;
-  border-top-color: beige;
-}
-
-.form-control {
-  background-color: transparent;
-  position: relative;
-  border: none;
-  margin: 20px 0;
-}
-
-.form-control i {
-  visibility: hidden;
-}
-
-.form-control.success input {
-  border-color: #2ecc71;
-}
-
-.form-control.error input {
-  border-color: #e74c3c;
-}
-
-.form-control.success i.fa-check {
-  color: #2ecc71;
-  visibility: visible;
-}
-
-.form-control.error small {
-  color: #e74c3c;
-  visibility: visible;
+footer .container .main-footer .footer-links .portfolio-link {
+  font-size: 0.875em;
+  text-decoration: none;
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

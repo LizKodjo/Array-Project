@@ -1,91 +1,54 @@
-
 .container {
-    @media(min-width:576px) {}
+    @include mq(small) {}
 
-    @media(min-width:768px) {}
+    @include mq(medium) {}
 
-    @media(min-width:992px) {}
+    @include mq(large) {}
 
-    @media(min-width:1200px) {}
+    @include mq(x-large) {}
 
     width:100%;
 }
 
 
-// @media (min-width: 568px) {
-//     .footer-items {
-//         .container {
-//             display: flex;
-//             flex-direction: column;
-//         }
-//     }
-// }
-
-@media (max-width: 568px) {
-    .imgChoice, .selectedPics {
-        width: 100%;
-    }
-
-    .footer-items {
-        .container {
-            display: flex;
-            flex-direction: column;
-        }
-    }
 
 
-
-    // .getImg {
-    //     width: 150px;
-    //     height: 150px;
-    //     padding: 10px;
+@include mq(x-small) {
+    // .instructions {
+    //     font-size: 1rem;
     // }
 }
 
-@media (min-width: 768px) {
+@include mq(small) {}
 
-    .footer-items {
-        .container {
-            display: flex;
-            justify-content: space-between;
+@include mq(min-medium) {
+    .inner {
+        padding: 0 40px;
+        .images-controls {
+            margin: 20px 0;
         }
     }
-
-    .mainPictures {
-        width: 95%;
-    }
-    
-    .imgChoice, .selectedPics {
-        width: 100%;
-    }
-
-    #emailLabel {
-        display:flex;
-    }
-
-    
 }
 
-@media (min-width: 996px) {
+@include mq(medium) {
+    .inner {
+        padding: 0 80px;
 
-    .mainPictures {
-        display:flex;
-        align-items: center;
-        flex-direction: column;
-        width: 45%;
+        .images-controls {
+            margin: 40px 0;
+        }
+    
     }
-      
 }
 
-
-
-@media (min-width: 1200) {
-
-    .mainPictures {
-        display:flex;
-        align-items: center;
-        flex-direction: column;
-        width: 70%;
+@include mq(large) {
+    .inner {
+        padding: 0 100px;
     }
-   
+}
+
+@include mq(x-large) {
+    .inner {
+        padding: 0 200px;
+    }
 }

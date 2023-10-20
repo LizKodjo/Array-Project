@@ -20,79 +20,50 @@
 
 <body>
     <div class="container main">
-        <div class="container inner">
-            <div class="page-content">
-                <header></header>
-                <main>
-                    <div class="container mainPictures">
-                        <div class="container pictures">
-                            <div>
-                                <h1>Beautiful Pictures</h1>
-                                <p>Using the buttons below, please scroll through the pictures. If there
-                                    are any you like, add them to your email by clicking the 'Select' button.
-                                </p>
-                            </div>
+        <header></header>
+        <main>
+            <!-- Main container -->
+            <div class="container inner">
+                <h1 class="mainHeading">Beautiful Pictures</h1>
+                <h2 class="subheading">How this works</h2>
+                <p class="instructions">
+                    If there are any pictures you like, enter your email address in the text
+                    box and click the 'Select' buttton. <br>
 
-                            <div class="container img">
-                                <h2>Images to choose from</h2>
-                                <img id="current-pic" class="imgChoice" src="https://picsum.photos/300"
-                                    alt="Random pictures">
+                    The pictures will be linked to your email address.
+                </p>
 
-                                <form id="selectingBtns" action="">
-                                    <button id="next-btn" type="button">Next Image</button>
-                                    <button id="select-btn" type="button">Select Image</button>
-                                </form>
-
-
-                            </div>
-                        </div>
-
-                        <div class="container">
-
-                            <form id="email-form" action="/">
-                                <div class="form-control">
-                                    <label id="emailLabel" for="email">Please enter your email:</label>
-                                    <input type="text" id="email" name="email">
-                                    <button id="sub-btn" type="submit">Submit</button><br>
-                                    <small class="errorMsg"></small>
-                                    <i class="fa-solid fa-check"></i>
-                                </div>
-
-                            </form>
-
-
-                            <div class="selectSection">
-                                <h3>Selected pictures</h3>
-                                <p>This is the email you entered:
-                                <div id="savedEmail"></div>
-                                </p>
-                                <div class="container selectedPics">
-                                    <div class="recEmail"><img class="getImg"></div>
-                                </div>
-
-                            </div>
-                        </div>
+                <!-- Images box -->
+                <div>
+                    <div class="images-box">
+                        <img src="https://picsum.photos/300?random=1">
                     </div>
-                </main>
-                <footer>
-                    <div class="container footer-items">
-                        <div class="container">
-                            <a href="https://elizabeth-kodjo.netmatters-scs.co.uk/aboutme.html">About me</a>
-                            <a href="https://elizabeth-kodjo.netmatters-scs.co.uk/myportfolio.html">My Portfolio</a>
-                            <a href="https://elizabeth-kodjo.netmatters-scs.co.uk/codeexamples.html">Coding Examples</a>
-                            <a href="https://elizabeth-kodjo.netmatters-scs.co.uk/scsscheme.html">SCS Scheme</a>
-                            <a href="https://elizabeth-kodjo.netmatters-scs.co.uk/index.html#contact">Contact Me</a>
-                        </div>
+
+                    <div class="images-controls">
+                        <button class="nextbtn">Next Picture</button>
+                        <button class="selectbtn">Select Picture</button>
                     </div>
-                </footer>
+                </div>
+
+
+
             </div>
-        </div>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="main-footer">
+                    <div class="footer-links">
+                        <a href="https://elizabeth-kodjo.netmatters-scs.co.uk/" target="_blank"
+                            class="portfolio-link">Home</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </footer>
     </div>
     <script src="js/jquery-3.7.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- <script src="js/bootstrap.js"></script> -->
-    <script src="js/functions.js"></script>
-    <script src="js/validation.js"></script>
 </body>
 
 </html>
