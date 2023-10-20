@@ -51,6 +51,10 @@ body {
   background-image: linear-gradient(to right, wheat, antiquewhite);
 }
 
+.mainPictures {
+  height: 100vh;
+}
+
 .imgChoice,
 .selectedPics {
   box-shadow: 10px 10px 5px wheat;
@@ -76,6 +80,24 @@ body {
 
 .recEmail {
   font-size: 20px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.footer-items a {
+  color: black;
+}
+
+footer {
+  padding: 15px 0;
+  border-top: inset;
+  border-top-color: beige;
 }
 
 .form-control {
@@ -105,24 +127,6 @@ body {
 .form-control.error small {
   color: #e74c3c;
   visibility: visible;
-}
-
-h1 {
-  font-size: 36px;
-}
-
-p {
-  font-size: 20px;
-}
-
-.footer-items a {
-  color: black;
-}
-
-footer {
-  padding: 15px 0;
-  border-top: inset;
-  border-top-color: beige;
 }
 
 /*# sourceMappingURL=style.css.map */

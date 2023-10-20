@@ -1,0 +1,27 @@
+.form-control {
+    background-color: transparent;
+    position: relative;
+    border: none;
+    margin: 20px 0;
+    
+}
+.form-control i {
+    visibility: hidden;
+}
+
+.form-control.success input {
+    border-color: #2ecc71;
+}
+
+.form-control.error input {
+    border-color: #e74c3c;
+}
+.form-control.success i.fa-check {
+    color:#2ecc71;
+    visibility: visible;
+}
+
+.form-control.error small {
+    color:#e74c3c;
+    visibility: visible;
+}
