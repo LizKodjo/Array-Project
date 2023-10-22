@@ -7,19 +7,47 @@
   }
   .inner .images-controls {
     margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .inner .email-images form .submitbtn {
+    margin: 15px 0;
   }
 }
 @media (min-width: 768px) {
   .inner {
     padding: 0 80px;
   }
+  .inner .nextbtn,
+  .inner .selectbtn {
+    font-size: 1.5625em;
+  }
   .inner .images-controls {
-    margin: 40px 0;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 40px 0 20px;
+  }
+  .inner .email-images form {
+    font-size: 1.5625em;
+  }
+  .inner .email-images form input {
+    padding: 0.3125em 15px;
+  }
+  .inner .email-images form .submitbtn {
+    margin: 30px 0;
   }
 }
 @media (min-width: 992px) {
   .inner {
     padding: 0 100px;
+  }
+  .inner .nextbtn,
+  .inner .selectbtn {
+    font-size: 1.875em;
+    padding: 0.3125em 30px;
+  }
+  .inner .email-images form {
+    font-size: 1.875em;
   }
 }
 @media (min-width: 1200px) {
@@ -43,6 +71,31 @@ body {
   vertical-align: middle;
 }
 
+.btn--default {
+  background-color: #fff;
+  border-color: #fff;
+  padding: 0.3125em 15px;
+  border-radius: 0.3125em;
+}
+.btn--success {
+  background-color: #00ff94;
+  border-color: #00ff94;
+  padding: 0.3125em 15px;
+  border-radius: 0.3125em;
+}
+.btn--error {
+  background-color: #ff0010;
+  border-color: #ff0010;
+  padding: 0.3125em 15px;
+  border-radius: 0.3125em;
+}
+.btn--option {
+  background-color: #555;
+  border-color: #555;
+  padding: 0.3125em 15px;
+  border-radius: 0.3125em;
+}
+
 .main {
   padding: 0;
 }
@@ -50,7 +103,20 @@ body {
 .inner .instructions {
   font-size: 2rem;
 }
-.inner .images-box {
+.inner .images .errorMsg {
+  color: #ff0010;
+}
+.inner .email-images input {
+  color: #3c3c3c;
+}
+.inner .images,
+.inner .email-images {
+  padding: 0;
+}
+.inner .images .images-box,
+.inner .images .email-images,
+.inner .email-images .images-box,
+.inner .email-images .email-images {
   box-shadow: 10px 10px #685f5f;
   width: 300px;
   height: 300px;

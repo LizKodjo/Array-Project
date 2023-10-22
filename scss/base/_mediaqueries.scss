@@ -24,8 +24,19 @@
 @include mq(min-medium) {
     .inner {
         padding: 0 40px;
+
         .images-controls {
             margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .email-images {
+            form {
+                .submitbtn {
+                    margin: 15px 0;
+                }
+            }
         }
     }
 }
@@ -34,16 +45,49 @@
     .inner {
         padding: 0 80px;
 
-        .images-controls {
-            margin: 40px 0;
+        .nextbtn,
+        .selectbtn {
+            font-size: em(25px);
         }
-    
+
+        .images-controls {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 40px 0 20px;
+        }
+
+        .email-images {
+            form {
+                font-size: em(25px);
+
+                input {
+                    padding: em(5px) 15px;
+                }
+
+                .submitbtn {
+                    margin: 30px 0;
+                }
+            }
+        }
+
     }
 }
 
 @include mq(large) {
     .inner {
         padding: 0 100px;
+
+        .nextbtn,
+        .selectbtn {
+            font-size: em(30px);
+            padding: em(5px) 30px;
+        }
+
+        .email-images {
+            form {
+                font-size: em(30px);
+            }
+        }
     }
 }
 
