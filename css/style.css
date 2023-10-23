@@ -8,7 +8,7 @@
   .inner .images-controls {
     margin: 20px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .inner .email-images form .submitbtn {
     margin: 15px 0;
@@ -103,11 +103,11 @@ body {
 .inner .instructions {
   font-size: 2rem;
 }
-.inner .images .errorMsg {
-  color: #ff0010;
-}
 .inner .email-images input {
   color: #3c3c3c;
+}
+.inner .email-images .errorMsg {
+  color: #ff0010;
 }
 .inner .images,
 .inner .email-images {
@@ -122,6 +122,13 @@ body {
   height: 300px;
   margin-left: auto;
   margin-right: auto;
+}
+.inner .selected-images {
+  margin: 30px 0;
+}
+.inner .selected-images .showImages {
+  padding: 5px;
+  border: 1px inset;
 }
 
 footer .container {
