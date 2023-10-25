@@ -6,7 +6,7 @@ const errorMsg = document.querySelector('.errorMsg');
 const subBtn = document.querySelector('.submitbtn');
 const displayImages = document.querySelector('.showImages');
 const selectImg = document.querySelector('.selectbtn');
-let imgURL = 'https://picsum.photos/300?random=1';
+let imgURL = 'https://picsum.photos/300?random=1.jpg';
 
 // Arrays
 
@@ -27,13 +27,23 @@ emailForm.addEventListener('submit', (e) => {
 // Getting URL for images and saving them in an array
 
 function getNextImg() {
+  
+
     fetch(imgURL)
         .then(res => imgBox.src = res.url)
         .then(data => {
             imgArray.push(data);
             console.log(imgArray);
-        })
+        });
+
+    // .then (res => imgBox.src = res.url)
+    // .then(data => {
+    //     const imgObjectURL = URL.createObjectURL(data);
+    //     imgArray.push(imgObjectURL);
+    // });
 }
+
+
 
 // Get next image
 
@@ -49,13 +59,13 @@ function CheckEmail() {
     // Check blank email field
     if (!email.value) {
         messages.push('Please enter your email address.');
-    // Check email validity 
+        // Check email validity 
     } else if (!email.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
         messages.push('Please enter a valid email address');
-    // Check email duplication
+        // Check email duplication
     } else if (emailArray.includes(email.value)) {
         messages.push('Please enter a different email address');
-    // Display email and save in array
+        // Display email and save in array
     } else {
         emailArray.push(email.value);
         console.log(emailArray)
@@ -72,7 +82,7 @@ function EmailForImages() {
     let imgerrors = [];
 
     // If email array is empty, display an error message
-    if(emailArray == '') {
+    if (emailArray == '') {
         imgerrors.push('Please enter an email address for pictures.');
     }
     errorMsg.innerText = imgerrors.join(', ');
@@ -80,11 +90,20 @@ function EmailForImages() {
 
 selectImg.addEventListener('click', EmailForImages);
 
-function GetImage() {
+// Selecting last picture in array
 
-    for (let i = 0; i < imgArray.length; i++) {
-        console.log(imgArray[-1]);
+selectImg.addEventListener('click', () => {
+    if (imgArray == '') {
+        console.log('Empty');
+    } else {
+        let pleaseDisplay = imgArray[imgArray.length - 1];
+        displayImages.innerHTML = `<img src = '${pleaseDisplay}'>`;
     }
-}
+})
 
-selectImg.addEventListener('click', GetImage)
+// function generateImage(data) {
+//     const html = `<img src='${data}'>`;
+//     displayImages.innerHTML = html;
+// }
+
+// selectImg.addEventListener('click', generateImage)
