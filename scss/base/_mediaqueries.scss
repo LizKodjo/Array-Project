@@ -77,6 +77,10 @@
     .inner {
         padding: 0 100px;
 
+        .container {
+            background: radial-gradient(black, transparent);
+        }
+
         .nextbtn,
         .selectbtn {
             font-size: em(30px);

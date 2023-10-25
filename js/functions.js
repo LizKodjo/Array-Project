@@ -11,75 +11,80 @@ let imgURL = 'https://picsum.photos/300?random=1';
 // Arrays
 
 // Images url array
-let imgElement= [];
+let imgArray = [];
+
 
 // Email array
-var imgEmail = [];
+var emailArray = [];
 
-// const emailReg = '/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/';
+
 
 // Prevent submit button from reloading page
 emailForm.addEventListener('submit', (e) => {
     e.preventDefault();
 });
 
-// Getting images 
+// Getting URL for images and saving them in an array
 
 function getNextImg() {
     fetch(imgURL)
         .then(res => imgBox.src = res.url)
         .then(data => {
-            imgElement.push(data);
-            console.log(imgElement);
+            imgArray.push(data);
+            console.log(imgArray);
         })
 }
-
-
-
-
-
-
-
-
 
 // Get next image
 
 nextImg.addEventListener('click', getNextImg);
+
+
 
 // Validate email and display
 
 function CheckEmail() {
     let messages = [];
 
+    // Check blank email field
     if (!email.value) {
         messages.push('Please enter your email address.');
+    // Check email validity 
     } else if (!email.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
-        messages.push('Please enter a valid address');
+        messages.push('Please enter a valid email address');
+    // Check email duplication
+    } else if (emailArray.includes(email.value)) {
+        messages.push('Please enter a different email address');
+    // Display email and save in array
     } else {
-        imgEmail.push(email.value);
-        console.log(imgEmail)
+        emailArray.push(email.value);
+        console.log(emailArray)
         displayImages.innerHTML = email.value;
         emailForm.reset();
     }
     errorMsg.innerText = messages.join(', ');
-
 }
 
 subBtn.addEventListener('click', CheckEmail);
 
-// Check email duplication
+// Check email has been stored for images
+function EmailForImages() {
+    let imgerrors = [];
 
-function emailDuplication() {
-    if (displayImages.value === email.value) {
-        errorMsg.innerHTML = 'Please enter a different email address.';
+    // If email array is empty, display an error message
+    if(emailArray == '') {
+        imgerrors.push('Please enter an email address for pictures.');
+    }
+    errorMsg.innerText = imgerrors.join(', ');
+}
+
+selectImg.addEventListener('click', EmailForImages);
+
+function GetImage() {
+
+    for (let i = 0; i < imgArray.length; i++) {
+        console.log(imgArray[-1]);
     }
 }
 
-subBtn.addEventListener('click', emailDuplication);
-
-// Check email has been stored
-selectImg.addEventListener('click', () => {
-    if (!displayImages) {
-        errorMsg.textContent = 'Please enter an email address to select picture.';
-    }
-})
+selectImg.addEventListener('click', GetImage)
