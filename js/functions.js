@@ -17,6 +17,8 @@ let imgArray = [];
 // Email array
 var emailArray = [];
 
+displayArray = [];
+
 
 
 // Prevent submit button from reloading page
@@ -97,7 +99,9 @@ selectImg.addEventListener('click', () => {
         console.log('Empty');
     } else {
         let pleaseDisplay = imgArray[imgArray.length - 1];
-        displayImages.innerHTML = `<img src = '${pleaseDisplay}'>`;
+        displayArray.push(`<img src = '${pleaseDisplay}'>`)
+        // displayImages.innerHTML = `<img src = '${pleaseDisplay}'>`;
+        displayImages.innerHTML = displayArray;
     }
 })
 
