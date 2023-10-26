@@ -6,22 +6,21 @@ const errorMsg = document.querySelector('.errorMsg');
 const subBtn = document.querySelector('.submitbtn');
 const displayImages = document.querySelector('.showImages');
 const selectImg = document.querySelector('.selectbtn');
+const savedEmail = document.querySelector('.emailsaved');
 let imgURL = 'https://picsum.photos/300?random=1.jpg';
+const chosenPics = document.querySelector('.chosenPics');
 let displaySelected;
 
 // Arrays
 
 // Images url array
 let imgArray = [];
-
-
 // Email array
 var emailArray = [];
-
 // Images array
-displayArray = [];
-
-
+let displayArray = [];
+// New email
+let newEmailArray = [];
 
 // Prevent submit button from reloading page
 emailForm.addEventListener('submit', (e) => {
@@ -32,14 +31,17 @@ emailForm.addEventListener('submit', (e) => {
 
 function getNextImg() {
 
-
     fetch(imgURL)
         .then(res => imgBox.src = res.url)
         .then(data => {
             imgArray.push(data);
             console.log(imgArray);
         });
+        
 }
+
+// Get the first image's url
+getNextImg();
 // Get next image
 nextImg.addEventListener('click', getNextImg);
 
@@ -61,7 +63,7 @@ function CheckEmail() {
     } else {
         emailArray.push(email.value);
         console.log(emailArray)
-        displayImages.innerHTML = email.value;
+        savedEmail.innerHTML = email.value;
         emailForm.reset();
     }
     errorMsg.innerText = messages.join(', ');
@@ -69,7 +71,7 @@ function CheckEmail() {
 
 subBtn.addEventListener('click', CheckEmail);
 
-// Check email has been stored for images
+// Check email has been stored for images, then add images
 function EmailForImages() {
     let imgerrors = [];
 
@@ -79,7 +81,11 @@ function EmailForImages() {
     } else {
         // displaying last img in array
         displaySelected = imgArray[imgArray.length - 1];
-        displayArray.push(`<img src = '${displaySelected}' width="120" height="120">`);
+        if (imgArray.includes(imgArray[imgArray-1])) {
+            imgerrors.push('Please select a different pic');
+        }
+        displayArray.push(`<img src = '${displaySelected}' class="chosenPics" width="120" height="120">`);    
+        console.log(imgArray);
         
         displayImages.innerHTML = displayArray;
     }
@@ -88,3 +94,17 @@ function EmailForImages() {
 
 selectImg.addEventListener('click', EmailForImages);
 
+selectImg.addEventListener('click', () => {
+    if (displayImages === chosenPics) {
+        console.log('Please select a different picture');
+    }
+})
+
+subBtn.addEventListener('click', () => {
+    if (emailArray.includes(email.value)) {
+        console.log('add different email');
+    } else {
+        emailArray.push(newEmailArray);
+        document.innerHTML = `<div>${savedEmail}</div>`;
+    }
+})
