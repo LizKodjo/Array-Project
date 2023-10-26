@@ -7,6 +7,7 @@ const subBtn = document.querySelector('.submitbtn');
 const displayImages = document.querySelector('.showImages');
 const selectImg = document.querySelector('.selectbtn');
 let imgURL = 'https://picsum.photos/300?random=1.jpg';
+let displaySelected;
 
 // Arrays
 
@@ -17,6 +18,7 @@ let imgArray = [];
 // Email array
 var emailArray = [];
 
+// Images array
 displayArray = [];
 
 
@@ -29,7 +31,7 @@ emailForm.addEventListener('submit', (e) => {
 // Getting URL for images and saving them in an array
 
 function getNextImg() {
-  
+
 
     fetch(imgURL)
         .then(res => imgBox.src = res.url)
@@ -37,21 +39,9 @@ function getNextImg() {
             imgArray.push(data);
             console.log(imgArray);
         });
-
-    // .then (res => imgBox.src = res.url)
-    // .then(data => {
-    //     const imgObjectURL = URL.createObjectURL(data);
-    //     imgArray.push(imgObjectURL);
-    // });
 }
-
-
-
 // Get next image
-
 nextImg.addEventListener('click', getNextImg);
-
-
 
 // Validate email and display
 
@@ -86,28 +76,15 @@ function EmailForImages() {
     // If email array is empty, display an error message
     if (emailArray == '') {
         imgerrors.push('Please enter an email address for pictures.');
+    } else {
+        // displaying last img in array
+        displaySelected = imgArray[imgArray.length - 1];
+        displayArray.push(`<img src = '${displaySelected}' width="120" height="120">`);
+        
+        displayImages.innerHTML = displayArray;
     }
     errorMsg.innerText = imgerrors.join(', ');
 }
 
 selectImg.addEventListener('click', EmailForImages);
 
-// Selecting last picture in array
-
-selectImg.addEventListener('click', () => {
-    if (imgArray == '') {
-        console.log('Empty');
-    } else {
-        let pleaseDisplay = imgArray[imgArray.length - 1];
-        displayArray.push(`<img src = '${pleaseDisplay}'>`)
-        // displayImages.innerHTML = `<img src = '${pleaseDisplay}'>`;
-        displayImages.innerHTML = displayArray;
-    }
-})
-
-// function generateImage(data) {
-//     const html = `<img src='${data}'>`;
-//     displayImages.innerHTML = html;
-// }
-
-// selectImg.addEventListener('click', generateImage)
