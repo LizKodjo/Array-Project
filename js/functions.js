@@ -81,10 +81,10 @@ function EmailForImages() {
     } else {
         // displaying last img in array
         displaySelected = imgArray[imgArray.length - 1];
-        if (imgArray.includes(imgArray[imgArray-1])) {
+        if (imgArray.includes(imgArray.value)) {
             imgerrors.push('Please select a different pic');
         }
-        displayArray.push(`<img src = '${displaySelected}' class="chosenPics" width="120" height="120">`);    
+        displayArray.push(`<img src = '${displaySelected}' width="120" height="120">`);    
         console.log(imgArray);
         
         displayImages.innerHTML = displayArray;
