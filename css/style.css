@@ -41,9 +41,6 @@
   .inner {
     padding: 0 100px;
   }
-  .inner .container {
-    background: radial-gradient(black, transparent);
-  }
   .inner .nextbtn,
   .inner .selectbtn {
     font-size: 1.875em;

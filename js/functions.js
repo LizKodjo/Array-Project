@@ -8,10 +8,9 @@ const displayImages = document.querySelector('.showImages');
 const selectImg = document.querySelector('.selectbtn');
 const savedEmail = document.querySelector('.emailsaved');
 let imgURL = 'https://picsum.photos/300?random=1.jpg';
-const chosenPics = document.querySelector('.chosenPics');
 let displaySelected;
 
-// Arrays
+// Arraysgit s
 
 // Images url array
 let imgArray = [];
@@ -94,17 +93,17 @@ function EmailForImages() {
 
 selectImg.addEventListener('click', EmailForImages);
 
-selectImg.addEventListener('click', () => {
-    if (displayImages === chosenPics) {
-        console.log('Please select a different picture');
-    }
-})
+// selectImg.addEventListener('click', () => {
+//     if (displayImages === chosenPics) {
+//         console.log('Please select a different picture');
+//     }
+// })
 
-subBtn.addEventListener('click', () => {
-    if (emailArray.includes(email.value)) {
-        console.log('add different email');
-    } else {
-        emailArray.push(newEmailArray);
-        document.innerHTML = `<div>${savedEmail}</div>`;
-    }
-})
+// subBtn.addEventListener('click', () => {
+//     if (emailArray.includes(email.value)) {
+//         console.log('add different email');
+//     } else {
+//         emailArray.push(newEmailArray);
+//         document.innerHTML = `<div>${savedEmail}</div>`;
+//     }
+// })
