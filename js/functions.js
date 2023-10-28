@@ -1,22 +1,20 @@
-const nextImg = document.querySelector('.nextbtn');
-const imgBox = document.querySelector('.random-img');
+const nextImgBtn = document.querySelector('.nextbtn');
+const currentDisplayedImg = document.querySelector('.random-img');
 const emailForm = document.querySelector('#form');
-const email = document.querySelector('#email');
+const inputEmail = document.querySelector('#email');
 const errorMsg = document.querySelector('.errorMsg');
 const subBtn = document.querySelector('.submitbtn');
-const displayImages = document.querySelector('.showImages');
-const selectImg = document.querySelector('.selectbtn');
+const selectedImgsDisplayed = document.querySelector('.showImages');
+const selectImgBtn = document.querySelector('.selectbtn');
 const savedEmail = document.querySelector('.emailsaved');
 let imgURL = 'https://picsum.photos/300?random=1.jpg';
-let displaySelected;
+let currentImg;
 
-// Arraysgit s
+// Arrays
 
-// Images url array
-let imgArray = [];
-// Email array
+// Email array to store emails
 var emailArray = [];
-// Images array
+// Images array to store selected images
 let displayArray = [];
 // New email
 let newEmailArray = [];
@@ -26,23 +24,22 @@ emailForm.addEventListener('submit', (e) => {
     e.preventDefault();
 });
 
-// Getting URL for images and saving them in an array
+// Getting URL for image
 
 function getNextImg() {
 
     fetch(imgURL)
-        .then(res => imgBox.src = res.url)
+        .then(res => currentDisplayedImg.src = res.url)
         .then(data => {
-            imgArray.push(data);
-            console.log(imgArray);
+            currentImg = data;
+            // console.log(currentImg);
         });
-        
 }
 
 // Get the first image's url
 getNextImg();
 // Get next image
-nextImg.addEventListener('click', getNextImg);
+nextImgBtn.addEventListener('click', getNextImg);
 
 // Validate email and display
 
@@ -50,19 +47,19 @@ function CheckEmail() {
     let messages = [];
 
     // Check blank email field
-    if (!email.value) {
+    if (!inputEmail.value) {
         messages.push('Please enter your email address.');
         // Check email validity 
-    } else if (!email.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+    } else if (!inputEmail.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
         messages.push('Please enter a valid email address');
         // Check email duplication
-    } else if (emailArray.includes(email.value)) {
+    } else if (emailArray.includes(inputEmail.value)) {
         messages.push('Please enter a different email address');
         // Display email and save in array
     } else {
-        emailArray.push(email.value);
+        emailArray.push(inputEmail.value);
         console.log(emailArray)
-        savedEmail.innerHTML = email.value;
+        savedEmail.innerHTML = inputEmail.value;
         emailForm.reset();
     }
     errorMsg.innerText = messages.join(', ');
@@ -78,29 +75,73 @@ function EmailForImages() {
     if (emailArray == '') {
         imgerrors.push('Please enter an email address for pictures.');
     } else {
-        // displaying last img in array
-        displaySelected = imgArray[imgArray.length - 1];
-        if (imgArray.includes(imgArray.value)) {
-            imgerrors.push('Please select a different pic');
+        // Check array for duplicates.
+        if (displayArray.includes(currentImg)) {
+            imgerrors.push('Please select a different picture')
+        } else {
+            // Convert URLs to img src
+            displayArray.push(currentImg);
+            selectedImgsDisplayed.innerHTML = "";
+
+            for (let i = 0; i < displayArray.length; i++) {
+                let imageElement = `<img src = '${displayArray[i]}' width="120" height="120">`;
+                selectedImgsDisplayed.innerHTML += imageElement;
+            }
+
+            // console.log(displayArray);
         }
-        displayArray.push(`<img src = '${displaySelected}' width="120" height="120">`);    
-        console.log(imgArray);
-        
-        displayImages.innerHTML = displayArray;
     }
     errorMsg.innerText = imgerrors.join(', ');
 }
+selectImgBtn.addEventListener('click', EmailForImages);
 
-selectImg.addEventListener('click', EmailForImages);
+// Check for duplication
 
-// selectImg.addEventListener('click', () => {
-//     if (displayImages === chosenPics) {
+
+
+
+// if (displayArray = '') {
+//     displayArray.push(currentImg);
+// }
+
+// if (displayArray.includes(currentImg)) {
+//     imgerrors.push('Please select a different picture.');
+// } else {
+//     // displayArray.push(`<img src = '${currentImg}' width="120" height="120">`);
+
+//     selectedImgsDisplayed.innerHTML = displayArray;
+
+//     console.log(displayArray)
+// }
+
+
+// else {
+// displayArray.push(currentImg);
+
+// displaying last img in array
+// imgArray.push(currentImg);
+//     if (imgArray.includes(currentImg)) {
+//         imgerrors.push('Please select a different pic');
+//     } else {
+//         displayArray.push(`<img src = '${currentImg}' width="120" height="120">`);
+//         console.log(imgArray);
+//     }
+//     selectedImgsDisplayed.innerHTML = displayArray;
+// }
+
+
+
+
+
+
+// selectImgBtn.addEventListener('click', () => {
+//     if (selectedImgsDisplayed === chosenPics) {
 //         console.log('Please select a different picture');
 //     }
 // })
 
 // subBtn.addEventListener('click', () => {
-//     if (emailArray.includes(email.value)) {
+//     if (emailArray.includes(inputEmail.value)) {
 //         console.log('add different email');
 //     } else {
 //         emailArray.push(newEmailArray);
