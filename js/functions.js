@@ -24,6 +24,17 @@ emailForm.addEventListener('submit', (e) => {
     e.preventDefault();
 });
 
+function addNewEmails() {
+    const newEmails = {
+        newEmail: emailArray,
+        testimages: [displayArray]       
+    }
+    newEmailArray.push(newEmails);
+    console.log(newEmailArray);
+}
+selectImgBtn.addEventListener('click', addNewEmails)
+
+
 // Getting URL for image
 
 function getNextImg() {
@@ -38,12 +49,13 @@ function getNextImg() {
 
 // Get the first image's url
 getNextImg();
+
 // Get next image
 nextImgBtn.addEventListener('click', getNextImg);
 
 // Validate email and display
 
-function CheckEmail() {
+function checkEmail() {
     let messages = [];
 
     // Check blank email field
@@ -65,10 +77,20 @@ function CheckEmail() {
     errorMsg.innerText = messages.join(', ');
 }
 
-subBtn.addEventListener('click', CheckEmail);
+subBtn.addEventListener('click', checkEmail);
+
+// Convert url to img src
+function convertURL() {
+
+    for (let i = 0; i < displayArray.length; i++) {
+        let imageElement = `<img src = '${displayArray[i]}' width="120" height="120">`;
+        selectedImgsDisplayed.innerHTML += imageElement;
+    }
+
+}
 
 // Check email has been stored for images, then add images
-function EmailForImages() {
+function emailForImages() {
     let imgerrors = [];
 
     // If email array is empty, display an error message
@@ -83,68 +105,13 @@ function EmailForImages() {
             displayArray.push(currentImg);
             selectedImgsDisplayed.innerHTML = "";
 
-            for (let i = 0; i < displayArray.length; i++) {
-                let imageElement = `<img src = '${displayArray[i]}' width="120" height="120">`;
-                selectedImgsDisplayed.innerHTML += imageElement;
-            }
+            convertURL();
 
             // console.log(displayArray);
         }
     }
     errorMsg.innerText = imgerrors.join(', ');
 }
-selectImgBtn.addEventListener('click', EmailForImages);
-
-// Check for duplication
+selectImgBtn.addEventListener('click', emailForImages);
 
 
-
-
-// if (displayArray = '') {
-//     displayArray.push(currentImg);
-// }
-
-// if (displayArray.includes(currentImg)) {
-//     imgerrors.push('Please select a different picture.');
-// } else {
-//     // displayArray.push(`<img src = '${currentImg}' width="120" height="120">`);
-
-//     selectedImgsDisplayed.innerHTML = displayArray;
-
-//     console.log(displayArray)
-// }
-
-
-// else {
-// displayArray.push(currentImg);
-
-// displaying last img in array
-// imgArray.push(currentImg);
-//     if (imgArray.includes(currentImg)) {
-//         imgerrors.push('Please select a different pic');
-//     } else {
-//         displayArray.push(`<img src = '${currentImg}' width="120" height="120">`);
-//         console.log(imgArray);
-//     }
-//     selectedImgsDisplayed.innerHTML = displayArray;
-// }
-
-
-
-
-
-
-// selectImgBtn.addEventListener('click', () => {
-//     if (selectedImgsDisplayed === chosenPics) {
-//         console.log('Please select a different picture');
-//     }
-// })
-
-// subBtn.addEventListener('click', () => {
-//     if (emailArray.includes(inputEmail.value)) {
-//         console.log('add different email');
-//     } else {
-//         emailArray.push(newEmailArray);
-//         document.innerHTML = `<div>${savedEmail}</div>`;
-//     }
-// })
