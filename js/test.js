@@ -11,6 +11,9 @@ const addedEmails = document.querySelector('#addedEmails');
 let imgURL = 'https://picsum.photos/300?random=2.jpg';
 let currentImg;
 
+const main = document.createElement('div');
+document.body.append(main);
+
 // Arrays
 
 // Email array to store emails
@@ -20,6 +23,7 @@ let displayArray = [];
 // New email
 let newEmailArray = [];
 let emailAddress = {};
+const testArray = [];
 
 // Prevent submit button from reloading page
 emailForm.addEventListener('submit', (e) => {
@@ -76,37 +80,47 @@ function creatEmailObj() {
     //emailAddress = inputEmail.value;
 
     emailAddress = {
-        email_id: [emailArray[emailArray.length - 1]],
-        images: [currentImg]
+        //email_id: [emailArray[emailArray.length - 1]],
+        email_id: [emailArray],
+        images: [displayArray]
+  
     };
 
     newEmailArray.push(emailAddress);
-    console.log(newEmailArray);
-   
+    //console.log(newEmailArray);
+
     form.reset();
 }
 
 selectImgBtn.addEventListener('click', creatEmailObj)
 
 function newEmailImage() {
-    for (let prop in emailAddress) {
-        if (savedEmail != Object.values(emailAddress[prop])) {
-            //Object.create(emailAddress);
-            document.querySelector('#demo').innerHTML = Object.values(emailAddress);
 
-        }
-
-
-        // if (emailAddress.email_id === prop) {
-        //     displayArray = emailAddress.images.join(', ')
-        // }
-
+    const arsArr = Array.from(newEmailArray);
+    console.log(arsArr)
+    // for (let i = 0; i < newEmailArray.length; i++) {
+       
+    //         console.log(newEmailArray[i]);
+    //         const ele = document.createElement('div');
+    //         ele.textContent = newEmailArray[i];
+    //         main.append(ele);
         
-        console.log(Object.values(emailAddress));
-        console.log(`${prop}: ${emailAddress[prop]}`);
-    }   
+        
+    // }
+    // for (let prop in emailAddress) {
+    //     if (savedEmail !== Object.values(emailAddress[prop])) {
+    //         savedEmail.innerHTML = inputEmail.value;
+    //         //Object.create(emailAddress);
+    //         document.querySelector('#demo').innerHTML = Object.values(emailAddress);
+            
+    //         convertURL();
+    //     }
+
+    //     console.log(Object.values(emailAddress));
+    //     console.log(`${prop}: ${emailAddress[prop]}`);
+    // }
 }
- selectImgBtn.addEventListener('click', newEmailImage)
+selectImgBtn.addEventListener('click', newEmailImage)
 
 
 // Convert url to img src
