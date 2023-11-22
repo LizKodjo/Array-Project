@@ -68,10 +68,20 @@ function checkEmail() {
         savedEmail.innerHTML = inputEmail.value;
         emailForm.reset();
     }
+
     errorMsg.innerText = messages.join(', ');
 }
 
 subBtn.addEventListener('click', checkEmail);
+
+// Displaying different email
+
+function variousEmails() {
+    if (savedEmail.value !== inputEmail.value) {
+        
+    }
+}
+subBtn.addEventListener('click', variousEmails)
 
 // Creating object with array 
 
@@ -83,13 +93,12 @@ function creatEmailObj() {
         //email_id: [emailArray[emailArray.length - 1]],
         email_id: [emailArray],
         images: [displayArray]
-  
+
     };
 
     newEmailArray.push(emailAddress);
     //console.log(newEmailArray);
 
-    form.reset();
 }
 
 selectImgBtn.addEventListener('click', creatEmailObj)
@@ -99,20 +108,20 @@ function newEmailImage() {
     const arsArr = Array.from(newEmailArray);
     console.log(arsArr)
     // for (let i = 0; i < newEmailArray.length; i++) {
-       
+
     //         console.log(newEmailArray[i]);
     //         const ele = document.createElement('div');
     //         ele.textContent = newEmailArray[i];
     //         main.append(ele);
-        
-        
+
+
     // }
     // for (let prop in emailAddress) {
     //     if (savedEmail !== Object.values(emailAddress[prop])) {
     //         savedEmail.innerHTML = inputEmail.value;
     //         //Object.create(emailAddress);
     //         document.querySelector('#demo').innerHTML = Object.values(emailAddress);
-            
+
     //         convertURL();
     //     }
 
