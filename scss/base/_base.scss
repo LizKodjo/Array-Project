@@ -38,6 +38,7 @@ body {
         }
         .errorMsg {
             color: $error;
+            background: white;
         }
     }
 
@@ -45,11 +46,12 @@ body {
     .email-images {
         padding: 0;
 
-        .images-box,
+        //.images-box,
+        .random-img,
         .email-images {
             box-shadow: 10px 10px #685f5f;
-            width: 300px;
-            height: 300px;
+            // width: 300px;
+            // height: 300px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -87,4 +89,8 @@ footer {
             }
         }
     }
+}
+
+option {
+    color: black;
 }

@@ -14,16 +14,33 @@
 
 
 @include mq(x-small) {
-    // .instructions {
-    //     font-size: 1rem;
-    // }
+    .inner {
+        .images {
+            .random-img {
+                width: 200px;
+                height: 200px;
+            }
+
+        }
+    }
 }
 
-@include mq(small) {}
+@include mq(small) {
+    .inner {
+        .images {
+            .random-img {
+                width: 300px;
+                height: 300px;
+            }
+
+        }
+    }
+}
 
 @include mq(min-medium) {
     .inner {
         padding: 0 40px;
+
 
         .images-controls {
             margin: 20px 0;
@@ -76,10 +93,6 @@
 @include mq(large) {
     .inner {
         padding: 0 100px;
-
-        // .container {
-        //     background: radial-gradient(black, transparent);
-        // }
 
         .nextbtn,
         .selectbtn {

@@ -7,7 +7,7 @@
     <meta name="keywords" content="HTML,CSS, JavaScript, jQuery">
     <meta name="author" content="Elizabeth Kodjo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array Project</title>
+    <title>JavaScript Array Project</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <script src="https://kit.fontawesome.com/f8bda8a3df.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
             <!-- Main container -->
             <div class="container inner">
                 <div>
-                    <h1 class="mainHeading">Beautiful Pictures</h1>
+                    <h1 class="mainHeading">Random Pictures</h1>
                     <h2 class="subheading">How this works</h2>
                     <p class="instructions">
                         If there are any pictures you like, enter your email address in the text
@@ -53,7 +53,11 @@
                         <form action="#" id="form">
                             <label for="email">Email:</label>
                             <input type="text" name="email" id="email" class="email" placeholder="Email">
-                            <button class="btn--option submitbtn" type="submit">Add Email</button>
+                            <button class="btn--option submitbtn" type="submit">Add Email</button><br>
+                            <!-- <label for="addedEmails">Select an email</label>
+                            <select name="added-emails" id="addedEmails">
+                                <option id="storedEmail" class="storedEmail" value="storedEmail"></option>
+                            </select> -->
                         </form>
                         <div class="errorMsg"></div>
 
@@ -61,12 +65,9 @@
                             <h1 class="emailsaved"></h1>
                             <div class="showImages"></div>
                         </div>
-
-                        <!-- <select name="added-emails" id="addedEmails"></select> -->
                     </div>
 
                     <div class="testingemails">
-                        
                         <p id="demo"></p>
                     </div>
                 </div>

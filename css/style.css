@@ -1,6 +1,18 @@
 .container {
   width: 100%;
 }
+@media (min-width: 1px) and (max-width: 575px) {
+  .inner .images .random-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media (min-width: 576px) {
+  .inner .images .random-img {
+    width: 300px;
+    height: 300px;
+  }
+}
 @media (min-width: 1px) and (max-width: 767px) {
   .inner {
     padding: 0 40px;
@@ -108,18 +120,17 @@ body {
 }
 .inner .email-images .errorMsg {
   color: #ff0010;
+  background: white;
 }
 .inner .images,
 .inner .email-images {
   padding: 0;
 }
-.inner .images .images-box,
+.inner .images .random-img,
 .inner .images .email-images,
-.inner .email-images .images-box,
+.inner .email-images .random-img,
 .inner .email-images .email-images {
   box-shadow: 10px 10px #685f5f;
-  width: 300px;
-  height: 300px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -147,6 +158,10 @@ footer .container .main-footer .footer-links .portfolio-link {
   font-size: 0.875em;
   text-decoration: none;
   color: #fff;
+}
+
+option {
+  color: black;
 }
 
 /*# sourceMappingURL=style.css.map */
