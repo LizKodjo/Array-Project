@@ -61,7 +61,6 @@ function convertURL(arr) {
 // validate email
 function checkEmail() {
     let messages = [];
-    //emailIndex = emailArray.indexOf(inputEmail.value);
 
     // Check blank email field
     if (!inputEmail.value) {
@@ -78,9 +77,67 @@ function checkEmail() {
 
         emailArray.push(inputEmail.value);
         console.log(emailArray);
-        displayArray.push([currentImg]);
+        //displayArray.push([currentImg]);
+        //console.log(displayArray);
     }
     errorMsg.innerText = messages.join(', ');
 }
 subBtn.addEventListener('click', checkEmail);
+
+//Get image
+function emailForImages() {
+    let imgerrors = [];
+
+    // Error to display if email array is empty
+    if (emailArray == '') {
+        imgerrors.push('Please enter an email address for your pictures');
+    }
+    else if (displayArray.includes(currentImg)) {
+        // Checking for duplicates
+        imgerrors.push('Please select a different picture.');
+    }
+    else {
+        // Convert URLs to img src
+
+        displayArray.push(currentImg);
+        viewImages(displayArray)
+        console.log(displayArray)
+        //getEachImage;
+
+
+    }
+    errorMsg.innerHTML = imgerrors.join(', ');
+}
+selectImgBtn.addEventListener('click', emailForImages);
+
+// Go through email array
+
+const displayObj = {
+    emails: emailArray,
+    images: [displayArray],
+};
+console.log(displayObj)
+
+
+
+
+
+
+
+function viewImages(arr) {
+    let imgToList = "";
+
+    for (let i = 0; i < emailArray.length; i++)
+        imgToList += `
+            <div class = "selected-images">
+            <h3 class = "emailsaved"> ${emailArray[i]}</h3>
+            <div class="showImages" id="showImages">${convertURL(arr)}</div>
+            </div>`;
+
+
+
+
+
+    mainPage.insertAdjacentHTML("beforeend", imgToList);
+}
 
