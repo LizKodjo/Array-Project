@@ -58,7 +58,12 @@ function convertURL(arr) {
     return imgsToSave;
 }
 
-// validate email
+// ADD EMAIL BUTTON
+
+// Validate email 
+
+let newEmaiObj;
+
 function checkEmail() {
     let messages = [];
 
@@ -76,14 +81,30 @@ function checkEmail() {
     else {
 
         emailArray.push(inputEmail.value);
-        console.log(emailArray);
+        //console.log(emailArray);
 
+        // display validated email
         let imgHeading = "";
+        
+
         for (let i = 0; i < emailArray.length; i++) {
-            imgHeading = `
+            // newEmaiObj = { email: emailArray[i],
+            //     images: [],
+            //     newImages: function() {
+            //         this.images = displayArray.push(displayArray.length - 1)
+            //     }
+            //  }
+            //  console.log(newEmaiObj);
+            
+            imgHeading =
+                `
                 <div class = "selected-images">
-            <h3 class = "emailsaved"> ${emailArray[i]}</h3>`;
-        }
+            <h3 class = "emailsaved"> ${emailArray[i]}</h3>
+            
+            </div>`;
+           // console.log(newEmaiObj);
+       }
+        
         mainPage.insertAdjacentHTML("beforeend", imgHeading);
 
         //displayArray.push([currentImg]);
@@ -93,7 +114,9 @@ function checkEmail() {
 }
 subBtn.addEventListener('click', checkEmail);
 
-//Get image
+// SELECT PICTURE BUTTON
+// Check email for images
+
 function emailForImages() {
     let imgerrors = [];
 
@@ -109,6 +132,7 @@ function emailForImages() {
         // Convert URLs to img src
 
         displayArray.push(currentImg);
+       
         viewImages(emailArray)
         console.log(displayArray)
         //getEachImage;
@@ -116,16 +140,6 @@ function emailForImages() {
     errorMsg.innerHTML = imgerrors.join(', ');
 }
 selectImgBtn.addEventListener('click', emailForImages);
-
-// Go through email array
-
-const displayObj = {
-    emails: emailArray,
-    images: [displayArray],
-};
-console.log(displayObj)
-
-
 
 function viewImages(arr) {
     let imgToList = "";
@@ -138,4 +152,3 @@ function viewImages(arr) {
 
     mainPage.insertAdjacentHTML("beforeend", imgToList);
 }
-
