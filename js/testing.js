@@ -9,18 +9,23 @@ const selectImgBtn = document.querySelector('.selectbtn');
 const savedEmail = document.querySelector('.emailsaved');
 const addedEmails = document.querySelector('#addedEmails');
 const newDisplay = document.querySelector('selected-images');
+
+const mainPage = document.querySelector('.inner');
+
+// variables
+
 let imgURL = 'https://picsum.photos/300?random=2.jpg';
 let currentImg;
-const mainPage = document.querySelector('.inner');
 
 
 
 // Arrays
 
 // Email array to store emails
-var emailArray = [];
+//var emailArray = [];
 // Images array to store selected images
-let displayArray = [];
+//let displayArray = [];
+var profiles =[];
 
 // Prevent submit button from reloading page
 emailForm.addEventListener('submit', (e) => {
@@ -80,31 +85,34 @@ function checkEmail() {
 
     else {
 
-        emailArray.push(inputEmail.value);
-        //console.log(emailArray);
+        //emailArray.push(inputEmail.value);
+        profiles.push({email: inputEmail.value, images:[]});
+        console.log(profiles);
 
         // display validated email
         let imgHeading = "";
-        
 
-        for (let i = 0; i < emailArray.length; i++) {
-            // newEmaiObj = { email: emailArray[i],
-            //     images: [],
-            //     newImages: function() {
-            //         this.images = displayArray.push(displayArray.length - 1)
-            //     }
-            //  }
-            //  console.log(newEmaiObj);
-            
+
+        //for (let i = 0; i < emailArray.length; i++) {
+            for(profile of profiles){
+
+            //for (let i = 0; i < emailArray.length; i++) {
+            // testObjects = {
+            //     emails: emailArray[i],
+            //     images: newImgArray.push(currentImg),
+                
+            }
+            // console.log(testObjects)
+
             imgHeading =
                 `
                 <div class = "selected-images">
-            <h3 class = "emailsaved"> ${emailArray[i]}</h3>
+            <h3 class = "emailsaved"> ${profile.email}</h3>
             
             </div>`;
-           // console.log(newEmaiObj);
-       }
-        
+            // console.log(newEmaiObj);
+        //}
+
         mainPage.insertAdjacentHTML("beforeend", imgHeading);
 
         //displayArray.push([currentImg]);
@@ -121,20 +129,26 @@ function emailForImages() {
     let imgerrors = [];
 
     // Error to display if email array is empty
-    if (emailArray == '') {
+    // if (emailArray == '') {
+    //     imgerrors.push('Please enter an email address for your pictures');
+    // }
+    email = inputEmail.value;
+    profile = profiles.find(item => item.email === email);
+    if(!profile) {
         imgerrors.push('Please enter an email address for your pictures');
     }
-    else if (displayArray.includes(currentImg)) {
+
+     if (profile.images.includes(currentImg)) {
         // Checking for duplicates
         imgerrors.push('Please select a different picture.');
     }
     else {
         // Convert URLs to img src
 
-        displayArray.push(currentImg);
-       
-        viewImages(emailArray)
-        console.log(displayArray)
+        profile.images.push(currentImg);
+
+        viewImages(profile.images)
+        //console.log(profiles)
         //getEachImage;
     }
     errorMsg.innerHTML = imgerrors.join(', ');
@@ -145,10 +159,13 @@ function viewImages(arr) {
     let imgToList = "";
 
     imgToList += `
-            <div class = "selected-images">            
-            <div class="showImages" id="showImages">${convertURL(displayArray)}</div>
+            <div class = "selected-images"> 
+                      
+            <div class="showImages" id="showImages">${convertURL(arr)}</div>
             </div>`;
 
 
     mainPage.insertAdjacentHTML("beforeend", imgToList);
 }
+
+
