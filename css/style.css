@@ -13,6 +13,9 @@
     width: 200px;
     height: 200px;
   }
+  .inner .email-details {
+    font-size: 20px;
+  }
 }
 @media (min-width: 576px) {
   .inner .instructions {
@@ -44,11 +47,11 @@
     padding: 0 80px;
   }
   .inner .instructions {
-    font-size: 1.25em;
+    font-size: 1.5em;
   }
   .inner .nextbtn,
   .inner .selectbtn {
-    font-size: 1.25em;
+    font-size: 1.5em;
   }
   .inner .images-controls {
     display: flex;
@@ -56,7 +59,7 @@
     margin: 40px 0 20px;
   }
   .inner .email-images form {
-    font-size: 1.5625em;
+    font-size: 1.5em;
   }
   .inner .email-images form input {
     padding: 0.3125em 15px;
@@ -69,21 +72,14 @@
   .inner {
     padding: 0 100px;
   }
-  .inner .instructions {
-    font-size: 1.875em;
-  }
   .inner .nextbtn,
   .inner .selectbtn {
-    font-size: 1.875em;
     padding: 0.3125em 30px;
-  }
-  .inner .email-images form {
-    font-size: 1.875em;
   }
 }
 @media (min-width: 1200px) {
   .inner {
-    padding: 0 200px;
+    padding: 0 300px;
   }
 }
 * {

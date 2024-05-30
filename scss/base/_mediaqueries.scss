@@ -29,6 +29,9 @@
         height: 200px;
       }
     }
+    .email-details {
+        font-size: 20px;
+    }
   }
 }
 
@@ -75,12 +78,12 @@
     padding: 0 80px;
 
     .instructions {
-        font-size: em(20px);
+        font-size: em(24px);
     }
 
     .nextbtn,
     .selectbtn {
-      font-size: em(20px);
+      font-size: em(24px);
     }
 
     .images-controls {
@@ -91,7 +94,7 @@
 
     .email-images {
       form {
-        font-size: em(25px);
+        font-size: em(24px);
 
         input {
           padding: em(5px) 15px;
@@ -109,27 +112,27 @@
   .inner {
     padding: 0 100px;
 
-    .instructions {
-        font-size: em(30px);
-    }
+    // .instructions {
+    //     font-size: em(30px);
+    // }
 
     .nextbtn,
     .selectbtn {
-      font-size: em(30px);
+      //font-size: em(30px);
       padding: em(5px) 30px;
     }
 
-    .email-images {
-      form {
-        font-size: em(30px);
-      }
-    }
+    // .email-images {
+    //   form {
+    //     //font-size: em(30px);
+    //   }
+    // }
   }
 }
 
 @include mq(x-large) {
   .inner {
-    padding: 0 200px;
+    padding: 0 300px;
     
   }
 }
