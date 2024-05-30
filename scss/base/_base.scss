@@ -24,9 +24,7 @@ body {
 
 .inner {
     
-    .instructions {
-        font-size: 2rem;
-    }
+    
 
     // .images {
         
@@ -61,7 +59,7 @@ body {
 
         margin: 30px 0;
         .showImages {
-            padding: 5px;
+            //padding: 5px;
             border: 1px inset;
 
             img {
@@ -94,3 +92,35 @@ footer {
 option {
     color: black;
 }
+
+  
+  .image-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .image-wrapper img {
+    display: block;
+  }
+  
+  .delete-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .image-wrapper:hover .delete-overlay {
+    opacity: 1;
+  }

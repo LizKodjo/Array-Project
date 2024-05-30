@@ -66,6 +66,7 @@ function checkEmail() {
     errorMsg.innerText = messages.join(', ');
 }
 
+// Function to get user's name from email to link to the display box
 function extractUsername(email) {
     if (typeof email !== 'string' || email.indexOf('@') === -1) {
         throw new Error('Invalid email address');
@@ -92,8 +93,9 @@ function emailForImages() {
     errorMsg.innerHTML = imgerrors.join(', ');
 }
 
-// Display selected images
+// Function to display selected images
 function viewImages(arr, username) {
+    
     const elem = document.querySelector(`.showImages-${username}`);
     elem.innerHTML = `<div class="showImages" id="showImages">${convertURL(arr)}</div>`;
 }
