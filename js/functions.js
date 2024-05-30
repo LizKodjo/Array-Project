@@ -16,6 +16,7 @@ let currentImg;
 
 // Arrays
 const profiles = [];
+const profile = profiles.find(item => item.email === email);
 
 // Prevent submit button from reloading page
 emailForm.addEventListener('submit', (e) => {
@@ -55,12 +56,15 @@ function checkEmail() {
 
         let imgHeading = `
         <div class = "selected-images">
-        <h3 class = "emailsaved"> ${inputEmail.value}</h3>
+        <h3 class = "emailsaved"> ${inputEmail.value}</h3>   
+             
         </div>`;
+
         mainPage.insertAdjacentHTML("beforeend", imgHeading);
         //console.log(profiles)
     }
     errorMsg.innerText = messages.join(', ');
+
 }
 
 //Function to associate email with selected images
@@ -68,7 +72,8 @@ function emailForImages() {
     const imgerrors = [];
     const email = inputEmail.value;
     const profile = profiles.find(item => item.email === email);
-
+    //const profile = [...new Set(profiles.map((item) => item.email === email))]
+    console.log(profile);
 
     // Error to display if email array is empty
     if (!profile) {
@@ -80,7 +85,6 @@ function emailForImages() {
         profile.images.push(currentImg);
 
         viewImages(profile.images);
-
     }
     errorMsg.innerHTML = imgerrors.join(', ');
 }
@@ -89,8 +93,8 @@ function emailForImages() {
 function viewImages(arr) {
     let imgToList = "";
 
-    imgToList += `
-            <div class = "selected-images">            
+    imgToList = `
+            <div class = "selected-images">                   
             <div class="showImages" id="showImages">${convertURL(arr)}</div>
             </div>`;
 

@@ -8,9 +8,11 @@
     @include mq(x-large) {}
 
     width:100%;
+    margin-left:auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
-
-
 
 
 @include mq(x-small) {
@@ -40,7 +42,6 @@
 @include mq(min-medium) {
     .inner {
         padding: 0 40px;
-
 
         .images-controls {
             margin: 20px 0;
