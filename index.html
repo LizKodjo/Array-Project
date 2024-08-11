@@ -1,93 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" >
-    <meta name="description" content="Array Assessment" >
-    <meta name="keywords" content="HTML,CSS, JavaScript, jQuery" >
-    <meta name="author" content="Elizabeth Kodjo" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>JavaScript Array Project</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico" >
-    <script
-      src="https://kit.fontawesome.com/f8bda8a3df.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mooli&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
 
-  <body>
-    <div class="container main">
-      <header></header>
-      <main>
-        <!-- Main container -->
-        <div class="container inner">
-          <div>
-            <h1 class="mainHeading">Random Pictures</h1>
-            <h2 class="subheading">How this works</h2>
-            <p class="instructions">
-              Enter your email address. <br> 
-              Select any pictures you like. <br>
-              To delete, click on the picture after selecting it.
-            </p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Array Assessment">
+  <meta name="keywords" content="HTML,CSS, JavaScript, jQuery">
+  <meta name="author" content="Elizabeth Kodjo">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Array Project</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <script src="https://kit.fontawesome.com/f8bda8a3df.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-            <!-- Images and controls box -->
-            <div class="container images">
-              <div class="images-box">
-                <img class="random-img" src="" alt="Random pictures">
-              </div>
+<body>
+  <div class="container main">
+    <header></header>
+    <main>
+      <!-- Main container -->
+      <div class="container inner">
+        <div>
+          <h1 class="mainHeading">Random Pictures</h1>
+          <h2 class="subheading">How this works</h2>
+          <p class="instructions">
+            Enter your email address. <br>
+            Select any pictures you like. <br>
+            To delete, click on the picture after selecting it.
+          </p>
 
-              <div class="images-controls">
-                <button class="btn--option nextbtn">Next Picture</button>
-                <button class="btn--option selectbtn">Select Picture</button>
-              </div>
+          <!-- Images and controls box -->
+          <div class="container images">
+            <div class="images-box">
+              <img class="random-img" src="" alt="Random pictures">
             </div>
 
-            <!-- Email, images and controls box -->
-
-            <div class="container email-images">
-              <h3 class="email-details">Please enter your email</h3>
-              <form action="#" id="form">
-                <label for="email">Email:</label>
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  class="email"
-                  placeholder="Email">
-                <button class="btn--option submitbtn" type="submit">
-                  Add Email</button><br>
-              </form>
-              <div class="errorMsg"></div>
-
-              <!-- User display section -->
-
-              <!-- <h3 class="userEmail"></h3>
-              <div
-                class="selectedImages"
-                id="selectedImages-${currentUser}"
-              ></div> -->
+            <div class="images-controls">
+              <button class="btn--option nextbtn">Next Picture</button>
+              <button class="btn--option selectbtn">Select Picture</button>
             </div>
           </div>
+
+          <!-- Email, images and controls box -->
+
+          <div class="container email-images">
+            <h3 class="email-details">Please enter your email</h3>
+            <form action="#" id="form">
+              <label for="email">Email:</label>
+              <input type="text" name="email" id="email" class="email" placeholder="Email">
+              <button class="btn--option submitbtn" type="submit">
+                Add Email</button><br>
+            </form>
+            <div class="errorMsg"></div>
+
+          </div>
         </div>
-      </main>
-    </div>
-    <script src="js/jquery-3.7.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- <script src="js/mainfunctions.js"></script> -->
-    <script src="js/functions.js"></script>
-    <!-- <script src="js/testing.js"></script> -->
-    <!-- <script src="js/startAgain.js"></script> -->
-    <!-- <script src="js/finalScript.js"></script> -->
-  </body>
+      </div>
+    </main>
+  </div>
+  <script src="js/jquery-3.7.0.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script src="js/functions.js"></script>
+
+</body>
+
 </html>
