@@ -3,7 +3,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=lizkodjo&label=Profile%20views&color=0e75b6&style=flat" alt="lizkodjo" /> </p>
 
-- 🔭 I used javascript to display images from an API  [click to view](https://js-array.elizabeth-kodjo.netmatters-scs.co.uk/).
+- 🔭 I used javascript to display images from an API.
 
 - 📫 How to reach me **ellizakodjo@outlook.com**
 
